@@ -1,0 +1,1947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kempsville Haven Senior Living | 24/7 Residential Care Home in Kempsville, VA</title>
+  <meta
+    name="description"
+    content="Kempsville Haven is an intimate, single-family senior care home in Kempsville, Virginia Beach offering 24/7 awake personal care, home-cooked meals, and modest, well-kept grounds. 3 founding resident beds currently available."
+  />
+
+  <!-- Google Fonts: Playfair Display (Warm Serif Headings) & Plus Jakarta Sans (Clean Legible Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    /* ==========================================================================
+       1. DESIGN SYSTEM & CSS VARIABLES (EASY TO CUSTOMIZE)
+       ========================================================================== */
+    :root {
+      --color-teal: #1E3A4C;        /* Deep Coastal Slate Teal */
+      --color-teal-dark: #142836;
+      --color-sage: #4A6B5D;        /* Warm Virginia Sage */
+      --color-sage-light: #E8EFEA;
+      --color-cream: #FAF8F5;       /* Soft Cream Background */
+      --color-sand: #EFECE6;        /* Warm Sand Surface */
+      --color-terracotta: #C86D51;  /* Warm Terracotta Accent */
+      --color-terracotta-hover: #B35B40;
+      --color-charcoal: #232B2F;    /* Primary Body Text */
+      --color-muted: #566268;       /* Secondary Text */
+      --color-white: #FFFFFF;
+      --color-border: #DFD9CE;
+
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 22px;
+      --shadow-sm: 0 4px 14px rgba(30, 58, 76, 0.06);
+      --shadow-md: 0 12px 32px rgba(30, 58, 76, 0.10);
+      --container-max: 1180px;
+    }
+
+    /* Senior-Friendly Large Text Mode (Toggled via top bar button) */
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+    }
+    html.large-text {
+      font-size: 18.5px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--color-cream);
+      color: var(--color-charcoal);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, input, select, textarea {
+      font-family: inherit;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* Typography Helpers */
+    h1, h2, h3, h4, .serif {
+      font-family: var(--font-serif);
+      color: var(--color-teal);
+      line-height: 1.22;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-sage);
+      margin-bottom: 0.65rem;
+    }
+
+    .section-padding {
+      padding: 5rem 0;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 3.25rem;
+    }
+
+    .section-header h2 {
+      font-size: clamp(1.85rem, 3.4vw, 2.6rem);
+      margin-bottom: 0.9rem;
+    }
+
+    .section-header p {
+      color: var(--color-muted);
+      font-size: 1.05rem;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.55rem;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 0.96rem;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background-color: var(--color-terracotta);
+      color: var(--color-white);
+      box-shadow: 0 4px 12px rgba(200, 109, 81, 0.28);
+    }
+    .btn-primary:hover {
+      background-color: var(--color-terracotta-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background-color: var(--color-white);
+      color: var(--color-teal);
+      border-color: var(--color-teal);
+    }
+    .btn-secondary:hover {
+      background-color: var(--color-teal);
+      color: var(--color-white);
+    }
+
+    .btn-teal {
+      background-color: var(--color-teal);
+      color: var(--color-white);
+    }
+    .btn-teal:hover {
+      background-color: var(--color-teal-dark);
+    }
+
+    /* ==========================================================================
+       2. TOP UTILITY BAR & STICKY NAVIGATION
+       ========================================================================== */
+    .utility-bar {
+      background-color: var(--color-teal);
+      color: var(--color-white);
+      font-size: 0.84rem;
+      padding: 0.55rem 0;
+    }
+
+    .utility-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.6rem;
+    }
+
+    .utility-left, .utility-right {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .availability-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background-color: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 0.22rem 0.75rem;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.8rem;
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #7CE0A3;
+      box-shadow: 0 0 0 3px rgba(124, 224, 163, 0.25);
+    }
+
+    .utility-phone {
+      font-weight: 700;
+      color: #FDE5DC;
+    }
+    .utility-phone:hover {
+      text-decoration: underline;
+    }
+
+    /* Sticky Main Header */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: rgba(250, 248, 245, 0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.95rem 0;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .brand-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background-color: var(--color-sage);
+      color: var(--color-white);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    .brand-title {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--color-teal);
+      line-height: 1.1;
+    }
+
+    .brand-sub {
+      font-size: 0.74rem;
+      color: var(--color-muted);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--color-charcoal);
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--color-terracotta);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .text-toggle-btn {
+      background-color: var(--color-sand);
+      border: 1px solid var(--color-border);
+      color: var(--color-teal);
+      padding: 0.5rem 0.75rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .text-toggle-btn:hover {
+      background-color: #E5E0D6;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      padding: 0.45rem 0.65rem;
+      color: var(--color-teal);
+      cursor: pointer;
+    }
+
+    /* Mobile Drawer */
+    .mobile-nav {
+      display: none;
+      background-color: var(--color-white);
+      border-bottom: 1px solid var(--color-border);
+      padding: 1rem 1.25rem 1.5rem;
+    }
+    .mobile-nav.open {
+      display: block;
+    }
+    .mobile-nav ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 1.1rem;
+    }
+    .mobile-nav a {
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--color-teal);
+    }
+
+    /* ==========================================================================
+       3. HERO SECTION
+       ========================================================================== */
+    .hero {
+      padding: 3.75rem 0 4.5rem;
+      background: linear-gradient(180deg, #F5F1EA 0%, var(--color-cream) 100%);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.12fr 0.88fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background-color: var(--color-sage-light);
+      color: var(--color-sage);
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      margin-bottom: 1.15rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.15rem, 4.2vw, 3.25rem);
+      margin-bottom: 1.15rem;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-lead {
+      font-size: 1.1rem;
+      color: var(--color-muted);
+      margin-bottom: 1.75rem;
+      max-width: 600px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero-highlights {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .hero-stat strong {
+      display: block;
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      color: var(--color-teal);
+    }
+
+    .hero-stat span {
+      font-size: 0.84rem;
+      color: var(--color-muted);
+      font-weight: 500;
+    }
+
+    .hero-visual {
+      position: relative;
+    }
+
+    .hero-image-card {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      border: 6px solid var(--color-white);
+      background-color: var(--color-sand);
+    }
+
+    .hero-image-card img {
+      width: 100%;
+      height: 440px;
+      object-fit: cover;
+    }
+
+    .hero-floating-card {
+      position: absolute;
+      bottom: -1.35rem;
+      left: -1.25rem;
+      background-color: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.25rem;
+      box-shadow: var(--shadow-md);
+      max-width: 290px;
+    }
+
+    .hero-floating-card .tag {
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--color-terracotta);
+      margin-bottom: 0.25rem;
+    }
+
+    .hero-floating-card p {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--color-teal);
+      line-height: 1.4;
+    }
+
+    /* ==========================================================================
+       4. SMALL HOME VS. LARGE FACILITY COMPARISON
+       ========================================================================== */
+    .comparison-section {
+      background-color: var(--color-white);
+    }
+
+    .comparison-table-wrap {
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1.2fr 1fr;
+    }
+
+    .comp-header {
+      padding: 1.25rem 1.4rem;
+      font-weight: 700;
+      font-size: 1rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .comp-header.feature-col {
+      background-color: var(--color-sand);
+      color: var(--color-teal);
+    }
+
+    .comp-header.haven-col {
+      background-color: var(--color-teal);
+      color: var(--color-white);
+      font-family: var(--font-serif);
+      font-size: 1.18rem;
+    }
+
+    .comp-header.facility-col {
+      background-color: var(--color-sand);
+      color: var(--color-muted);
+    }
+
+    .comp-cell {
+      padding: 1.15rem 1.4rem;
+      border-bottom: 1px solid var(--color-border);
+      font-size: 0.94rem;
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+    }
+
+    .comp-cell.feature-name {
+      font-weight: 700;
+      color: var(--color-teal);
+      background-color: #FCFBF9;
+    }
+
+    .comp-cell.haven-val {
+      background-color: #F4F8F6;
+      font-weight: 600;
+      color: var(--color-charcoal);
+    }
+
+    .comp-cell.facility-val {
+      color: var(--color-muted);
+    }
+
+    .check-badge {
+      color: var(--color-sage);
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .cross-badge {
+      color: #9AA3A8;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* ==========================================================================
+       5. OUR HOME, MODEST WELL-KEPT GROUNDS & KEMPSVILLE LOCATION
+       ========================================================================== */
+    .grounds-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .ground-card {
+      background-color: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ground-card img {
+      width: 100%;
+      height: 215px;
+      object-fit: cover;
+    }
+
+    .ground-card-body {
+      padding: 1.4rem;
+      flex: 1;
+    }
+
+    .ground-card-body h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.55rem;
+    }
+
+    .ground-card-body p {
+      font-size: 0.93rem;
+      color: var(--color-muted);
+    }
+
+    .kempsville-banner {
+      background-color: var(--color-sand);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 1.75rem 2rem;
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .kempsville-banner h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .kempsville-banner p {
+      color: var(--color-muted);
+      font-size: 0.95rem;
+    }
+
+    .landmark-list {
+      list-style: none;
+      display: grid;
+      gap: 0.65rem;
+    }
+
+    .landmark-list li {
+      background-color: var(--color-white);
+      padding: 0.65rem 1rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--color-border);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--color-teal);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .landmark-list span {
+      font-size: 0.8rem;
+      color: var(--color-sage);
+      font-weight: 700;
+    }
+
+    /* ==========================================================================
+       6. INTERACTIVE TABS (CARE SERVICES & SAMPLE HOME-COOKED MENU)
+       ========================================================================== */
+    .care-section {
+      background-color: var(--color-white);
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .tab-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-bottom: 2.25rem;
+    }
+
+    .tab-btn {
+      padding: 0.75rem 1.35rem;
+      border-radius: 999px;
+      border: 1px solid var(--color-border);
+      background-color: var(--color-cream);
+      color: var(--color-teal);
+      font-weight: 600;
+      font-size: 0.93rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .tab-btn:hover {
+      border-color: var(--color-teal);
+    }
+
+    .tab-btn.active {
+      background-color: var(--color-teal);
+      color: var(--color-white);
+      border-color: var(--color-teal);
+      box-shadow: 0 4px 12px rgba(30, 58, 76, 0.18);
+    }
+
+    .tab-panel {
+      display: none;
+      background-color: var(--color-cream);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
+    }
+
+    .tab-panel.active {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 2.25rem;
+      align-items: center;
+      animation: fadeIn 0.25s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .tab-panel h3 {
+      font-size: 1.65rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .tab-panel p {
+      color: var(--color-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .inclusion-list {
+      list-style: none;
+      display: grid;
+      gap: 0.65rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .inclusion-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .inclusion-list li::before {
+      content: "✓";
+      color: var(--color-sage);
+      font-weight: 800;
+    }
+
+    .care-note-box {
+      background-color: var(--color-white);
+      border-left: 4px solid var(--color-sage);
+      padding: 1.35rem;
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .care-note-box h4 {
+      font-size: 1.1rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .care-note-box p {
+      font-size: 0.9rem;
+      margin-bottom: 0;
+    }
+
+    /* Sample Dining Menu Cards */
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    .menu-panel {
+      display: none;
+    }
+    .menu-panel.active {
+      display: block;
+      animation: fadeIn 0.25s ease;
+    }
+
+    .dish-card {
+      background-color: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 1.35rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .dish-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-sage);
+      background-color: var(--color-sage-light);
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      margin-bottom: 0.6rem;
+    }
+
+    .dish-card h4 {
+      font-size: 1.15rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .dish-card p {
+      font-size: 0.9rem;
+      color: var(--color-muted);
+    }
+
+    /* ==========================================================================
+       7. INTERACTIVE 3-BED AVAILABILITY & RATE ESTIMATOR
+       ========================================================================== */
+    .estimator-section {
+      background-color: var(--color-sand);
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .estimator-box {
+      background-color: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
+      box-shadow: var(--shadow-md);
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 2.25rem;
+      align-items: start;
+    }
+
+    .estimator-group {
+      margin-bottom: 1.65rem;
+    }
+
+    .estimator-group label.group-title {
+      display: block;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--color-teal);
+      margin-bottom: 0.65rem;
+    }
+
+    .option-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.85rem;
+    }
+
+    .option-card {
+      border: 2px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      cursor: pointer;
+      background-color: var(--color-cream);
+      transition: all 0.2s;
+      text-align: left;
+    }
+
+    .option-card:hover {
+      border-color: var(--color-teal);
+    }
+
+    .option-card.selected {
+      border-color: var(--color-teal);
+      background-color: #F0F5F7;
+      box-shadow: 0 4px 12px rgba(30, 58, 76, 0.08);
+    }
+
+    .option-card .bed-status {
+      display: inline-block;
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: var(--color-sage);
+      background-color: var(--color-sage-light);
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      margin-bottom: 0.4rem;
+    }
+
+    .option-card h4 {
+      font-size: 1.08rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .option-card p {
+      font-size: 0.84rem;
+      color: var(--color-muted);
+    }
+
+    .care-level-pills {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.65rem;
+    }
+
+    .care-pill {
+      border: 2px solid var(--color-border);
+      background-color: var(--color-cream);
+      border-radius: var(--radius-sm);
+      padding: 0.75rem 0.65rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .care-pill.selected {
+      border-color: var(--color-sage);
+      background-color: var(--color-sage-light);
+      color: var(--color-teal);
+    }
+
+    .care-pill strong {
+      display: block;
+      font-size: 0.9rem;
+    }
+
+    .care-pill span {
+      font-size: 0.78rem;
+      color: var(--color-muted);
+    }
+
+    .summary-panel {
+      background-color: var(--color-teal);
+      color: var(--color-white);
+      border-radius: var(--radius-md);
+      padding: 1.85rem;
+    }
+
+    .summary-panel .summary-eyebrow {
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #A9C7D6;
+      font-weight: 700;
+    }
+
+    .summary-price {
+      font-family: var(--font-serif);
+      font-size: 2.6rem;
+      font-weight: 700;
+      margin: 0.35rem 0;
+      line-height: 1.1;
+    }
+
+    .summary-price span {
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #D4E3EB;
+    }
+
+    .summary-list {
+      list-style: none;
+      margin: 1.25rem 0 1.5rem;
+      padding-top: 1.1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.16);
+      display: grid;
+      gap: 0.55rem;
+      font-size: 0.88rem;
+      color: #EAF2F6;
+    }
+
+    .summary-list li::before {
+      content: "✓ ";
+      color: #8DE3AE;
+      font-weight: 700;
+    }
+
+    .summary-panel .btn-primary {
+      width: 100%;
+    }
+
+    /* ==========================================================================
+       8. SCHEDULE A VISIT / TOUR FORM SECTION
+       ========================================================================== */
+    .tour-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 2.75rem;
+      align-items: start;
+    }
+
+    .tour-info-card {
+      background-color: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .tour-info-card h3 {
+      font-size: 1.55rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .tour-info-card p {
+      color: var(--color-muted);
+      margin-bottom: 1.4rem;
+      font-size: 0.96rem;
+    }
+
+    .contact-methods {
+      display: grid;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+      padding: 0.85rem;
+      background-color: var(--color-cream);
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--color-border);
+    }
+
+    .contact-item strong {
+      display: block;
+      color: var(--color-teal);
+      font-size: 0.92rem;
+    }
+
+    .contact-item span {
+      font-size: 0.88rem;
+      color: var(--color-muted);
+    }
+
+    .tour-form-card {
+      background-color: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 2.2rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--color-teal);
+      margin-bottom: 0.35rem;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.75rem 0.9rem;
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      background-color: var(--color-cream);
+      color: var(--color-charcoal);
+      transition: border-color 0.2s;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--color-teal);
+      background-color: var(--color-white);
+    }
+
+    .confirmation-banner {
+      display: none;
+      background-color: var(--color-sage-light);
+      border: 1.5px solid var(--color-sage);
+      color: var(--color-teal);
+      padding: 1.5rem;
+      border-radius: var(--radius-md);
+      margin-top: 1rem;
+    }
+
+    .confirmation-banner.visible {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    /* ==========================================================================
+       9. FOOTER
+       ========================================================================== */
+    .footer {
+      background-color: var(--color-teal-dark);
+      color: #D6E1E7;
+      padding: 4rem 0 2rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 2.5rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .footer h4 {
+      color: var(--color-white);
+      font-size: 1.15rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .footer p {
+      font-size: 0.9rem;
+      color: #B8C8D1;
+      margin-bottom: 0.85rem;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: grid;
+      gap: 0.55rem;
+      font-size: 0.9rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--color-white);
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      padding-top: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+      font-size: 0.82rem;
+      color: #9FB2BD;
+    }
+
+    /* ==========================================================================
+       10. RESPONSIVE MEDIA QUERIES (TABLET & MOBILE)
+       ========================================================================== */
+    @media (max-width: 960px) {
+      .nav-links, .nav-actions .btn-primary {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: inline-flex;
+      }
+      .hero-grid,
+      .tab-panel.active,
+      .estimator-box,
+      .tour-grid,
+      .kempsville-banner {
+        grid-template-columns: 1fr;
+      }
+      .hero-floating-card {
+        position: static;
+        margin-top: 1rem;
+        max-width: 100%;
+      }
+      .grounds-grid,
+      .menu-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .comparison-grid {
+        grid-template-columns: 1fr;
+      }
+      .comp-header.feature-col,
+      .comp-header.facility-col {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero-highlights,
+      .option-cards,
+      .care-level-pills,
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+      .section-padding {
+        padding: 3.5rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================================================================
+       TOP UTILITY BAR (LOCAL KEMPSVILLE INFO & LIVE 3-BED STATUS)
+       ======================================================================== -->
+  <div class="utility-bar">
+    <div class="container utility-inner">
+      <div class="utility-left">
+        <span class="availability-pill">
+          <span class="pulse-dot"></span>
+          3 Founding Resident Beds Currently Available
+        </span>
+        <span>Kempsville Area • Virginia Beach, VA</span>
+      </div>
+      <div class="utility-right">
+        <span>24/7 Awake Care &amp; Home-Cooked Meals</span>
+        <a href="tel:7575550194" class="utility-phone">Call (757) 555-0194</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       STICKY NAVIGATION BAR
+       ======================================================================== -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="#top" class="brand">
+        <div class="brand-icon" aria-hidden="true">
+          <!-- Simple Home & Heart SVG Icon -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V9.5z"/>
+          </svg>
+        </div>
+        <div>
+          <div class="brand-title">Kempsville Haven</div>
+          <div class="brand-sub">Residential Senior Care Home</div>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#why-small">Why a 3-Bed Home</a></li>
+        <li><a href="#our-home">Home &amp; Grounds</a></li>
+        <li><a href="#care-services">24/7 Care</a></li>
+        <li><a href="#dining">Home Cooking</a></li>
+        <li><a href="#rates">3-Bed Availability</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button
+          type="button"
+          id="textSizeBtn"
+          class="text-toggle-btn"
+          title="Increase or reset text size for easier reading"
+          aria-pressed="false"
+        >
+          <span>A / A+</span>
+          <span id="textSizeLabel">Normal Text</span>
+        </button>
+        <a href="#schedule-visit" class="btn btn-primary">Schedule a Visit</a>
+        <button type="button" id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Open menu">
+          ☰ Menu
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <nav id="mobileNav" class="mobile-nav" aria-label="Mobile Navigation">
+      <ul>
+        <li><a href="#why-small" class="mobile-link">Why a 3-Bed Home</a></li>
+        <li><a href="#our-home" class="mobile-link">Home &amp; Grounds</a></li>
+        <li><a href="#care-services" class="mobile-link">24/7 Care Services</a></li>
+        <li><a href="#dining" class="mobile-link">Home-Cooked Dining</a></li>
+        <li><a href="#rates" class="mobile-link">3-Bed Availability &amp; Rates</a></li>
+      </ul>
+      <a href="#schedule-visit" class="btn btn-primary mobile-link" style="width:100%;">Schedule a Private Tour</a>
+    </nav>
+  </header>
+
+  <!-- ========================================================================
+       HERO SECTION
+       ======================================================================== -->
+  <section id="top" class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="hero-badge">
+          <span>Now Welcoming Founding Residents in Kempsville</span>
+        </div>
+        <h1>A Real Kempsville Home Where Your Loved One Is Known, Safe &amp; Cared For 24/7.</h1>
+        <p class="hero-lead">
+          Kempsville Haven is a newly established, single-family residential care home in Virginia Beach. With just <strong>3 resident beds currently available</strong>, modest well-kept grounds, and around-the-clock personal attention, we offer a peaceful alternative to large, noisy facilities.
+        </p>
+
+        <div class="hero-ctas">
+          <a href="#schedule-visit" class="btn btn-primary">Schedule a Private Home Tour</a>
+          <a href="#rates" class="btn btn-secondary">View 3 Available Beds &amp; Rates</a>
+        </div>
+
+        <div class="hero-highlights">
+          <div class="hero-stat">
+            <strong>3 Beds Open</strong>
+            <span>Intimate single-home setting</span>
+          </div>
+          <div class="hero-stat">
+            <strong>24/7 Care</strong>
+            <span>Attentive awake caregivers</span>
+          </div>
+          <div class="hero-stat">
+            <strong>Kempsville, VA</strong>
+            <span>Minutes from Sentara Leigh</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-image-card">
+          <img
+            src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=1000&q=80"
+            alt="Inviting single-family residential care home with tidy front lawn and trees in Kempsville"
+          />
+        </div>
+        <div class="hero-floating-card">
+          <div class="tag">Thoughtful Beginning</div>
+          <p>Starting intentionally small so our first 3 residents receive unhurried, family-style care every day.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       WHY A 3-BED RESIDENTIAL HOME VS. LARGE FACILITY
+       ======================================================================== -->
+  <section id="why-small" class="section-padding comparison-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">The Single-Home Difference</span>
+        <h2>Why Families Choose a 3-Bed Care Home Over a 100-Bed Facility</h2>
+        <p>
+          We are just getting started and plan to grow carefully over time—which means right now your loved one isn’t one of a hundred room numbers, but one of three cherished residents in our home.
+        </p>
+      </div>
+
+      <div class="comparison-table-wrap">
+        <div class="comparison-grid">
+          <div class="comp-header feature-col">What Matters Most</div>
+          <div class="comp-header haven-col">Kempsville Haven (3-Bed Home)</div>
+          <div class="comp-header facility-col">Large Institutional Facility</div>
+
+          <div class="comp-cell feature-name">Caregiver Attention</div>
+          <div class="comp-cell haven-val"><span class="check-badge">✓</span> Up to 3 residents max with 24/7 awake care</div>
+          <div class="comp-cell facility-val"><span class="cross-badge">✕</span> 1 aide stretched across 15–25+ residents</div>
+
+          <div class="comp-cell feature-name">Environment &amp; Pace</div>
+          <div class="comp-cell haven-val"><span class="check-badge">✓</span> Quiet residential house with modest, well-kept yard</div>
+          <div class="comp-cell facility-val"><span class="cross-badge">✕</span> Long echoing hallways, elevators &amp; busy lobbies</div>
+
+          <div class="comp-cell feature-name">Daily Meals</div>
+          <div class="comp-cell haven-val"><span class="check-badge">✓</span> Home-cooked meals tailored to personal favorites</div>
+          <div class="comp-cell facility-val"><span class="cross-badge">✕</span> Commercial cafeteria trays on fixed schedules</div>
+
+          <div class="comp-cell feature-name">Staff Consistency</div>
+          <div class="comp-cell haven-val"><span class="check-badge">✓</span> Familiar faces who know your loved one’s routines</div>
+          <div class="comp-cell facility-val"><span class="cross-badge">✕</span> Frequent shift turnover and rotating agency staff</div>
+
+          <div class="comp-cell feature-name">Family Communication</div>
+          <div class="comp-cell haven-val"><span class="check-badge">✓</span> Direct phone &amp; text updates with the home’s operators</div>
+          <div class="comp-cell facility-val"><span class="cross-badge">✕</span> Front-desk call transfers and corporate red tape</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       OUR HOME & MODEST, WELL-KEPT GROUNDS
+       ======================================================================== -->
+  <section id="our-home" class="section-padding">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Life in Kempsville</span>
+        <h2>A Comfortable Home &amp; Modest, Well-Kept Grounds</h2>
+        <p>
+          Everything about our property is designed for safety, calm, and familiarity—easy to navigate without feeling overwhelming.
+        </p>
+      </div>
+
+      <div class="grounds-grid">
+        <article class="ground-card">
+          <img
+            src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=800&q=80"
+            alt="Tidy, well-kept backyard garden and level walkway for fresh air"
+          />
+          <div class="ground-card-body">
+            <h3>Modest, Well-Kept Grounds</h3>
+            <p>
+              Our fenced backyard features a clean, level patio, shaded seating for morning coffee, and neatly tended flower beds—safe and simple for daily fresh air.
+            </p>
+          </div>
+        </article>
+
+        <article class="ground-card">
+          <img
+            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"
+            alt="Bright, welcoming residential living room and family dining area"
+          />
+          <div class="ground-card-body">
+            <h3>Sunlit Living &amp; Family Table</h3>
+            <p>
+              Residents gather in a cozy, uncluttered living room for conversation, music, puzzles, and home-cooked meals shared around one family dining table.
+            </p>
+          </div>
+        </article>
+
+        <article class="ground-card">
+          <img
+            src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=800&q=80"
+            alt="Clean, bright residential bedroom ready for a founding resident"
+          />
+          <div class="ground-card-body">
+            <h3>3 Peaceful Resident Beds</h3>
+            <p>
+              We currently offer 2 private bedrooms and 1 companion suite—each bright, clean, equipped with safety call bells, and ready to personalize with cherished keepsakes.
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <div class="kempsville-banner">
+        <div>
+          <span class="eyebrow">Convenient Virginia Beach Location</span>
+          <h3>Rooted in a Quiet Kempsville Neighborhood</h3>
+          <p>
+            Located on a peaceful residential street in Kempsville, making it effortless for Virginia Beach, Chesapeake, and Norfolk families to drop by for afternoon visits—while keeping top medical care close by.
+          </p>
+        </div>
+        <ul class="landmark-list">
+          <li>Sentara Leigh Hospital <span>~6 mins away</span></li>
+          <li>Stumpy Lake Natural Area <span>~5 mins away</span></li>
+          <li>Kempsville Commons &amp; Pharmacies <span>~4 mins away</span></li>
+          <li>I-64 &amp; I-264 Interchange <span>~7 mins away</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       INTERACTIVE 24/7 CARE SERVICES TABS
+       ======================================================================== -->
+  <section id="care-services" class="section-padding care-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">24/7 Compassionate Support</span>
+        <h2>Personalized Care Tailored to Each Resident</h2>
+        <p>
+          Because we care for a small household of up to 3 residents, we adapt to your loved one’s natural daily rhythm rather than forcing them into a rigid schedule.
+        </p>
+      </div>
+
+      <div class="tab-buttons" role="tablist" aria-label="Care Options">
+        <button type="button" class="tab-btn active" data-care-tab="assisted">24/7 Assisted Living Care</button>
+        <button type="button" class="tab-btn" data-care-tab="memory">Memory &amp; Cognitive Support</button>
+        <button type="button" class="tab-btn" data-care-tab="respite">Short-Term &amp; Respite Stays</button>
+      </div>
+
+      <!-- Tab 1: Assisted Living Care -->
+      <div id="care-assisted" class="tab-panel active">
+        <div>
+          <h3>24/7 Awake Personal Care &amp; Daily Living</h3>
+          <p>
+            Ideal for seniors who value the warmth of a real home but need dependable, around-the-clock assistance with daily routines, mobility, and medication reminders.
+          </p>
+          <ul class="inclusion-list">
+            <li>24/7 awake staff on-site day and night for immediate assistance</li>
+            <li>Gentle, dignified help with bathing, dressing, grooming, and mobility</li>
+            <li>Timely medication reminders and coordination with local physicians</li>
+            <li>Daily housekeeping, personal laundry, and fresh linens included</li>
+          </ul>
+          <a href="#schedule-visit" class="btn btn-teal">Ask About 24/7 Care</a>
+        </div>
+        <div class="care-note-box">
+          <h4>Our Founding Home Promise</h4>
+          <p>
+            As a newly established care home, our leadership is hands-on every single day. You will always know the exact caregivers looking after your mom or dad—and receive honest, personal updates whenever you call.
+          </p>
+        </div>
+      </div>
+
+      <!-- Tab 2: Memory & Cognitive Support -->
+      <div id="care-memory" class="tab-panel">
+        <div>
+          <h3>Calm, Low-Stimulation Memory Care</h3>
+          <p>
+            Large facilities with crowds and noisy intercoms can overwhelm seniors living with early-to-moderate dementia or Alzheimer’s. Our quiet 3-bed home offers comforting predictability.
+          </p>
+          <ul class="inclusion-list">
+            <li>Simple, easy-to-navigate single-home floor plan reduces confusion</li>
+            <li>Consistent caregivers who learn personal life stories and calming cues</li>
+            <li>Enclosed, well-kept backyard patio for safe outdoor walks and sunshine</li>
+            <li>Gentle daily engagement: music, photo albums, folding laundry &amp; baking</li>
+          </ul>
+          <a href="#schedule-visit" class="btn btn-teal">Discuss Memory Support Needs</a>
+        </div>
+        <div class="care-note-box">
+          <h4>Why Small Scale Helps Memory</h4>
+          <p>
+            Seeing the same two or three familiar faces around a quiet kitchen table builds genuine trust and dramatically reduces sundowning anxiety compared to bustling institutional wings.
+          </p>
+        </div>
+      </div>
+
+      <!-- Tab 3: Short-Term & Respite Stays -->
+      <div id="care-respite" class="tab-panel">
+        <div>
+          <h3>Restorative Respite &amp; Post-Hospital Stays</h3>
+          <p>
+            Whether family caregivers need a well-deserved break or a loved one needs extra support after a stay at Sentara Leigh Hospital, we welcome short-term stays when beds are open.
+          </p>
+          <ul class="inclusion-list">
+            <li>Move-in ready furnished bedroom with fresh linens and Wi-Fi</li>
+            <li>Full 24/7 personal care, medication reminders, and home-cooked meals</li>
+            <li>Coordination with visiting home-health physical or occupational therapists</li>
+            <li>A wonderful way to experience Kempsville Haven before a long-term move</li>
+          </ul>
+          <a href="#schedule-visit" class="btn btn-teal">Check Short-Term Bed Dates</a>
+        </div>
+        <div class="care-note-box">
+          <h4>Flexible 2-to-6 Week Stays</h4>
+          <p>
+            Subject to current bed availability. Reach out anytime to see if one of our 3 beds is open for your family’s upcoming travel or recovery dates.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       HOME-COOKED FAMILY DINING (INTERACTIVE MENU TABS)
+       ======================================================================== -->
+  <section id="dining" class="section-padding">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">From Our Kitchen Table</span>
+        <h2>Real Home-Cooked Meals, Made to Order</h2>
+        <p>
+          No steam tables or institutional trays. Meals are cooked fresh in our residential kitchen and tailored to our 3 residents’ tastes and doctor-recommended diets.
+        </p>
+      </div>
+
+      <div class="tab-buttons" role="tablist" aria-label="Sample Daily Menu">
+        <button type="button" class="tab-btn active" data-menu-tab="breakfast">Breakfast</button>
+        <button type="button" class="tab-btn" data-menu-tab="lunch">Lunch</button>
+        <button type="button" class="tab-btn" data-menu-tab="dinner">Dinner</button>
+        <button type="button" class="tab-btn" data-menu-tab="snacks">Snacks &amp; Dietary Care</button>
+      </div>
+
+      <!-- Breakfast -->
+      <div id="menu-breakfast" class="menu-panel active">
+        <div class="menu-grid">
+          <div class="dish-card">
+            <span class="dish-tag">Resident Favorite</span>
+            <h4>Soft Scrambled Eggs &amp; Warm Biscuit</h4>
+            <p>Farm-fresh scrambled eggs cooked to preference with a warm buttermilk biscuit, turkey bacon, and sliced peaches.</p>
+          </div>
+          <div class="dish-card">
+            <span class="dish-tag">Heart Healthy</span>
+            <h4>Cinnamon Apple Oatmeal</h4>
+            <p>Slow-simmered rolled oats topped with warm baked apples, a touch of brown sugar, and milk or cream.</p>
+          </div>
+          <div class="dish-card">
+            <span class="dish-tag">Light &amp; Fresh</span>
+            <h4>Blueberry Pancakes &amp; Fresh Fruit</h4>
+            <p>Fluffy golden pancakes studded with Virginia blueberries, served with warm syrup and fresh melon.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lunch -->
+      <div id="menu-lunch" class="menu-panel">
+        <div class="menu-grid">
+          <div class="dish-card">
+            <span class="dish-tag">Coastal Classic</span>
+            <h4>Chesapeake Crab Cake &amp; Garden Salad</h4>
+            <p>Pan-seared lump crab cake with mild lemon herb sauce and crisp garden greens with cherry tomatoes.</p>
+          </div>
+          <div class="dish-card">
+            <span class="dish-tag">Comforting</span>
+            <h4>Homemade Chicken Noodle Soup &amp; Half Melt</h4>
+            <p>Slow-simmered chicken broth with tender vegetables and egg noodles paired with a warm turkey-cheddar sandwich.</p>
+          </div>
+          <div class="dish-card">
+            <span class="dish-tag">Garden Fresh</span>
+            <h4>Baked Potato Bar &amp; Steamed Broccoli</h4>
+            <p>Fluffy baked russet potato topped with mild cheddar, sour cream, and tender steamed broccoli florets.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dinner -->
+      <div id="menu-dinner" class="menu-panel">
+        <div class="menu-grid">
+          <div class="dish-card">
+            <span class="dish-tag">Sunday Supper</span>
+            <h4>Slow-Cooked Pot Roast &amp; Carrots</h4>
+            <p>Fork-tender beef roast simmered with sweet carrots, baby potatoes, and savory pan gravy.</p>
+          </div>
+          <div class="dish-card">
+            <span class="dish-tag">Light &amp; Savory</span>
+            <h4>Herb-Baked Tilapia &amp; Mashed Potatoes</h4>
+            <p>Flaky white fish baked with lemon and parsley, served alongside creamy whipped potatoes and green beans.</p>
+          </div>
+          <div class="dish-card">
+            <span class="dish-tag">Homestyle</span>
+            <h4>Roasted Chicken Breast &amp; Sweet Corn</h4>
+            <p>Juicy oven-roasted chicken breast with soft dinner rolls, buttered sweet corn, and warm apple crisp for dessert.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Snacks & Dietary -->
+      <div id="menu-snacks" class="menu-panel">
+        <div class="menu-grid">
+          <div class="dish-card">
+            <span class="dish-tag">Always Available</span>
+            <h4>Fresh Fruit, Yogurt &amp; Tea Station</h4>
+            <p>Bananas, berries, yogurt cups, crackers, herbal teas, and infused water are available anytime day or night.</p>
+          </div>
+          <div class="dish-card">
+            <span class="dish-tag">Doctor-Aligned</span>
+            <h4>Low-Sodium &amp; Diabetic-Friendly Prep</h4>
+            <p>Because we cook for just 3 residents, every plate is easily adapted for low-sodium, heart-healthy, or diabetic needs.</p>
+          </div>
+          <div class="dish-card">
+            <span class="dish-tag">Afternoon Treat</span>
+            <h4>Fresh-Baked Banana Bread &amp; Decaf Coffee</h4>
+            <p>Enjoyed out on our shaded backyard patio during afternoon visits with family and friends.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       INTERACTIVE 3-BED AVAILABILITY & TRANSPARENT RATE ESTIMATOR
+       ======================================================================== -->
+  <section id="rates" class="section-padding estimator-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Transparent Founding Rates</span>
+        <h2>3-Bed Availability &amp; Monthly Care Estimator</h2>
+        <p>
+          No confusing corporate point systems or surprise community buy-in fees. Select a room option and care level below to see simple, all-inclusive monthly pricing.
+        </p>
+      </div>
+
+      <div class="estimator-box">
+        <div>
+          <div class="estimator-group">
+            <label class="group-title">1. Choose an Available Room (3 Beds Total Open):</label>
+            <div class="option-cards">
+              <button type="button" class="option-card selected" data-room="private" data-price="4450">
+                <span class="bed-status">2 Beds Available</span>
+                <h4>Private Bedroom</h4>
+                <p>Your own peaceful, sunlit bedroom with personal closet and safety call bell.</p>
+              </button>
+              <button type="button" class="option-card" data-room="companion" data-price="3750">
+                <span class="bed-status">1 Bed Available</span>
+                <h4>Companion Suite</h4>
+                <p>Spacious shared bedroom ideal for companionship and value-conscious care.</p>
+              </button>
+            </div>
+          </div>
+
+          <div class="estimator-group" style="margin-bottom:0;">
+            <label class="group-title">2. Select Daily Support Level:</label>
+            <div class="care-level-pills">
+              <button type="button" class="care-pill selected" data-care-addon="0" data-care-name="Standard 24/7 Care">
+                <strong>Standard 24/7</strong>
+                <span>Included</span>
+              </button>
+              <button type="button" class="care-pill" data-care-addon="450" data-care-name="Enhanced Mobility Care">
+                <strong>Enhanced Care</strong>
+                <span>+$450 / mo</span>
+              </button>
+              <button type="button" class="care-pill" data-care-addon="650" data-care-name="Memory & Cognitive Care">
+                <strong>Memory Support</strong>
+                <span>+$650 / mo</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="summary-panel">
+          <div class="summary-eyebrow">Estimated All-Inclusive Monthly Rate</div>
+          <div class="summary-price" id="estimatedPrice">$4,450 <span>/ month</span></div>
+          <div id="selectedSummaryLabel" style="font-size:0.9rem; color:#FDE5DC; font-weight:600;">
+            Private Bedroom • Standard 24/7 Care
+          </div>
+
+          <ul class="summary-list">
+            <li>24/7 awake caregiver supervision &amp; personal assistance</li>
+            <li>3 fresh home-cooked meals + snacks &amp; beverages daily</li>
+            <li>Medication reminders &amp; local pharmacy coordination</li>
+            <li>All utilities, Wi-Fi, housekeeping &amp; personal laundry</li>
+            <li>Zero hidden corporate “community move-in” fees</li>
+          </ul>
+
+          <button type="button" id="applyEstimateBtn" class="btn btn-primary">
+            Inquire About This Bed →
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SCHEDULE A PRIVATE TOUR / VISIT SECTION
+       ======================================================================== -->
+  <section id="schedule-visit" class="section-padding">
+    <div class="container tour-grid">
+      <div class="tour-info-card">
+        <span class="eyebrow">Come Meet Us in Person</span>
+        <h3>Walk Through Our Home &amp; Backyard Patio</h3>
+        <p>
+          Choosing care for a parent or spouse is a major decision. We invite you to visit our Kempsville home at an unhurried pace, see the 3 available beds, and meet the caregivers who will be by your loved one’s side 24/7.
+        </p>
+
+        <div class="contact-methods">
+          <div class="contact-item">
+            <div>
+              <strong>Direct Care Line</strong>
+              <span><a href="tel:7575550194">(757) 555-0194</a> — Call or text anytime</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div>
+              <strong>Neighborhood Location</strong>
+              <span>Kempsville Area, Virginia Beach, VA 23464 (Exact address shared upon tour confirmation for resident privacy)</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div>
+              <strong>Tour Hours</strong>
+              <span>7 Days a Week • Morning, Afternoon &amp; Early Evening Appointments</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tour-form-card">
+        <h3 style="font-size:1.55rem; margin-bottom:0.35rem;">Request a Private Home Visit</h3>
+        <p style="color:var(--color-muted); font-size:0.92rem; margin-bottom:1.35rem;">
+          Fill out the brief form below and we will reach out promptly to confirm your visit.
+        </p>
+
+        <form id="tourForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="visitorName">Your Name *</label>
+              <input type="text" id="visitorName" class="form-control" placeholder="e.g., Sarah Jenkins" required />
+            </div>
+            <div class="form-group">
+              <label for="visitorPhone">Phone Number *</label>
+              <input type="tel" id="visitorPhone" class="form-control" placeholder="(757) 555-0199" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="visitType">Visit Preference</label>
+              <select id="visitType" class="form-control">
+                <option value="In-Person Home Tour">In-Person Home Tour (Kempsville)</option>
+                <option value="Live Video Walkthrough">Live Video Walkthrough (FaceTime / Zoom)</option>
+                <option value="Phone Consultation First">Phone Consultation First</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="preferredDate">Preferred Date</label>
+              <input type="date" id="preferredDate" class="form-control" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="roomInterest">Bed &amp; Care Interest</label>
+            <input
+              type="text"
+              id="roomInterest"
+              class="form-control"
+              value="Private Bedroom • Standard 24/7 Care"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="visitNotes">Tell Us a Little About Your Loved One (Optional)</label>
+            <textarea
+              id="visitNotes"
+              rows="3"
+              class="form-control"
+              placeholder="Any mobility needs, timeline, or questions you'd like us to prepare for..."
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width:100%;">
+            Request Private Visit
+          </button>
+        </form>
+
+        <div id="tourConfirmation" class="confirmation-banner" role="status">
+          <h4 style="font-size:1.15rem; margin-bottom:0.35rem;">✓ Thank You! Your Visit Request Is Received.</h4>
+          <p id="confirmationText" style="font-size:0.92rem; margin:0;"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Kempsville Haven Senior Living</h4>
+          <p>
+            An intimate, single-family residential senior care home in the Kempsville area of Virginia Beach. Currently offering 3 founding resident beds with 24/7 awake care, home-cooked meals, and modest, well-kept grounds.
+          </p>
+          <p style="font-size:0.84rem; color:#9FB2BD;">
+            Growing thoughtfully and deliberately—putting resident comfort, safety, and dignity first.
+          </p>
+        </div>
+
+        <div>
+          <h4>Explore Our Home</h4>
+          <ul class="footer-links">
+            <li><a href="#why-small">Why a 3-Bed Residential Home</a></li>
+            <li><a href="#our-home">Our Home &amp; Well-Kept Grounds</a></li>
+            <li><a href="#care-services">24/7 Personal &amp; Memory Care</a></li>
+            <li><a href="#dining">Home-Cooked Sample Menu</a></li>
+            <li><a href="#rates">3-Bed Availability &amp; Rates</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Kempsville Contact</h4>
+          <ul class="footer-links">
+            <li>Kempsville, Virginia Beach, VA 23464</li>
+            <li><a href="tel:7575550194">Phone: (757) 555-0194</a></li>
+            <li><a href="mailto:care@kempsvillehaven.com">care@kempsvillehaven.com</a></li>
+            <li><a href="#schedule-visit">Schedule a Private Home Tour</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="currentYear"></span> Kempsville Haven Senior Living. All rights reserved.</span>
+        <span>Serving Families in Virginia Beach, Kempsville &amp; Chesapeake, VA</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       CLEAN VANILLA JAVASCRIPT FOR ALL INTERACTIVE FEATURES
+       ======================================================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Set current copyright year
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+      // 2. Senior-Friendly Text Size Toggle (Normal vs. Large Text)
+      const textSizeBtn = document.getElementById('textSizeBtn');
+      const textSizeLabel = document.getElementById('textSizeLabel');
+      textSizeBtn.addEventListener('click', () => {
+        const isLarge = document.documentElement.classList.toggle('large-text');
+        textSizeBtn.setAttribute('aria-pressed', String(isLarge));
+        textSizeLabel.textContent = isLarge ? 'Large Text' : 'Normal Text';
+      });
+
+      // 3. Mobile Menu Toggle
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      const mobileNav = document.getElementById('mobileNav');
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileNav.classList.toggle('open');
+      });
+      document.querySelectorAll('.mobile-link').forEach((link) => {
+        link.addEventListener('click', () => mobileNav.classList.remove('open'));
+      });
+
+      // 4. Care Services Interactive Tabs
+      const careTabBtns = document.querySelectorAll('[data-care-tab]');
+      const carePanels = document.querySelectorAll('.tab-panel');
+      careTabBtns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const target = btn.getAttribute('data-care-tab');
+          careTabBtns.forEach((b) => b.classList.remove('active'));
+          carePanels.forEach((p) => p.classList.remove('active'));
+          btn.classList.add('active');
+          document.getElementById(`care-${target}`).classList.add('active');
+        });
+      });
+
+      // 5. Home-Cooked Menu Interactive Tabs
+      const menuTabBtns = document.querySelectorAll('[data-menu-tab]');
+      const menuPanels = document.querySelectorAll('.menu-panel');
+      menuTabBtns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const target = btn.getAttribute('data-menu-tab');
+          menuTabBtns.forEach((b) => b.classList.remove('active'));
+          menuPanels.forEach((p) => p.classList.remove('active'));
+          btn.classList.add('active');
+          document.getElementById(`menu-${target}`).classList.add('active');
+        });
+      });
+
+      // 6. Interactive 3-Bed Availability & Monthly Rate Estimator
+      let baseRoomPrice = 4450;
+      let selectedRoomName = 'Private Bedroom';
+      let careAddonPrice = 0;
+      let selectedCareName = 'Standard 24/7 Care';
+
+      const roomCards = document.querySelectorAll('.option-card');
+      const carePills = document.querySelectorAll('.care-pill');
+      const estimatedPriceEl = document.getElementById('estimatedPrice');
+      const selectedSummaryLabelEl = document.getElementById('selectedSummaryLabel');
+      const applyEstimateBtn = document.getElementById('applyEstimateBtn');
+      const roomInterestInput = document.getElementById('roomInterest');
+
+      function updateEstimateDisplay() {
+        const total = baseRoomPrice + careAddonPrice;
+        estimatedPriceEl.innerHTML = `$${total.toLocaleString()} <span>/ month</span>`;
+        selectedSummaryLabelEl.textContent = `${selectedRoomName} • ${selectedCareName}`;
+      }
+
+      roomCards.forEach((card) => {
+        card.addEventListener('click', () => {
+          roomCards.forEach((c) => c.classList.remove('selected'));
+          card.classList.add('selected');
+          baseRoomPrice = Number(card.getAttribute('data-price'));
+          selectedRoomName = card.querySelector('h4').textContent;
+          updateEstimateDisplay();
+        });
+      });
+
+      carePills.forEach((pill) => {
+        pill.addEventListener('click', () => {
+          carePills.forEach((p) => p.classList.remove('selected'));
+          pill.classList.add('selected');
+          careAddonPrice = Number(pill.getAttribute('data-care-addon'));
+          selectedCareName = pill.getAttribute('data-care-name');
+          updateEstimateDisplay();
+        });
+      });
+
+      // Pre-fill the tour form when clicking "Inquire About This Bed"
+      applyEstimateBtn.addEventListener('click', () => {
+        const total = baseRoomPrice + careAddonPrice;
+        roomInterestInput.value = `${selectedRoomName} • ${selectedCareName} (Est. $${total.toLocaleString()}/mo)`;
+        document.getElementById('schedule-visit').scrollIntoView({ behavior: 'smooth' });
+        document.getElementById('visitorName').focus();
+      });
+
+      // 7. Tour / Private Visit Form Submission Handler
+      const tourForm = document.getElementById('tourForm');
+      const tourConfirmation = document.getElementById('tourConfirmation');
+      const confirmationText = document.getElementById('confirmationText');
+
+      tourForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('visitorName').value.trim();
+        const phone = document.getElementById('visitorPhone').value.trim();
+        const visitType = document.getElementById('visitType').value;
+        const interest = roomInterestInput.value;
+
+        confirmationText.textContent = `We have received your request for a ${visitType} regarding "${interest}". We will call or text ${name} at ${phone} shortly to confirm your appointment and share our Kempsville address.`;
+        tourConfirmation.classList.add('visible');
+        tourForm.reset();
+      });
+    });
+  </script>
+</body>
+</html>
